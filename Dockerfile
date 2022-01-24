@@ -1,8 +1,12 @@
 # Specify base image
-FROM alpine
+FROM node:alpine
+
+WORKDIR ./usr/app
+
+COPY ./ ./
 
 # Install dependencies
-RUN yarn install
+RUN npm install
 
 # Default command
-CMD ["yarn", "start"]
+CMD ["npm", "start"]
